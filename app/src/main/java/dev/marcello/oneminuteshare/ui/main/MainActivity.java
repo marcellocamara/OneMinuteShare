@@ -1,8 +1,10 @@
-package dev.marcello.oneminuteshare;
+package dev.marcello.oneminuteshare.ui.main;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import dev.marcello.oneminuteshare.R;
 
 /**
  * Created by marcellocamara@id.uff.br on 17/01/2020.
