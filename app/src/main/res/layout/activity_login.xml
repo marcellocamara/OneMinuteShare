@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/ScreenDefault"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginView">
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,68 +26,49 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="0dp"
-            android:layout_height="280dp"
-            android:background="#fff"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagerDividerLeft"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewLogin"
-            app:layout_constraintEnd_toStartOf="@+id/textViewLogin"
-            app:layout_constraintStart_toStartOf="@+id/guideLineLeft"
-            app:layout_constraintTop_toTopOf="@+id/textViewLogin" />
-
-        <TextView
-            android:id="@+id/textViewLogin"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineHorizontalTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/login"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guideLineRight"
-            app:layout_constraintStart_toStartOf="@+id/guideLineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/logo" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagerDividerRight"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineHorizontalCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineHorizontalBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
             android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewLogin"
-            app:layout_constraintEnd_toStartOf="@+id/guideLineRight"
-            app:layout_constraintStart_toEndOf="@+id/textViewLogin"
-            app:layout_constraintTop_toTopOf="@+id/textViewLogin" />
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description_icon_logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_splash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideLineHorizontalTop" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/buttonGoogle"
             android:layout_width="260dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="64dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
             app:cardCornerRadius="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textViewLogin"
-            app:layout_constraintStart_toStartOf="@+id/textViewLogin"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLogin">
+            app:layout_constraintBottom_toBottomOf="@id/guideLineHorizontalBottom"
+            app:layout_constraintEnd_toEndOf="@+id/guideLineRight"
+            app:layout_constraintStart_toStartOf="@+id/guideLineLeft">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -103,7 +83,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/description_icon_google"
-                    android:src="@drawable/vector_google"
+                    android:src="@drawable/icon_google"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

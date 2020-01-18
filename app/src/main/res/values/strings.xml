@@ -3,10 +3,10 @@
     <string name="app_name">OneMinuteShare</string>
 
     <!-- Login -->
-    <string name="login">Login</string>
     <string name="sign_in">Sign in</string>
 
     <!-- ImageView Descriptions -->
+    <string name="description_icon_logo">Logo icon</string>
     <string name="description_icon_google">Google icon</string>
 
 </resources>
