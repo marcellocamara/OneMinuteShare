@@ -1,12 +1,14 @@
 package dev.marcello.oneminuteshare.ui.login;
 
+import dev.marcello.oneminuteshare.ui.ProgressListener;
+
 /**
  * Created by marcellocamara@id.uff.br on 18/01/2020.
  */
 
 public interface Login {
 
-    interface View {
+    interface View extends ProgressListener {
 
         void onLoginSuccess();
 

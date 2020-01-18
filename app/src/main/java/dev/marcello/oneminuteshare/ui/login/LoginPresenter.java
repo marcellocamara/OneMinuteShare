@@ -14,7 +14,8 @@ public class LoginPresenter implements Login.Presenter {
 
     @Override
     public void onLoginRequest() {
-
+        view.showProgress();
+        //TODO: doLogin
     }
 
 }

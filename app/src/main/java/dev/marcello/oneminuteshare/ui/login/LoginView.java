@@ -1,13 +1,13 @@
 package dev.marcello.oneminuteshare.ui.login;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dev.marcello.oneminuteshare.R;
+import dev.marcello.oneminuteshare.ui.dialogs.LoadingDialog;
 
 /**
  * Created by marcellocamara@id.uff.br on 18/01/2020.
@@ -15,6 +15,7 @@ import dev.marcello.oneminuteshare.R;
 
 public class LoginView extends AppCompatActivity implements Login.View {
 
+    private LoadingDialog loadingDialog;
     private Login.Presenter presenter;
 
     @Override
@@ -24,13 +25,14 @@ public class LoginView extends AppCompatActivity implements Login.View {
 
         ButterKnife.bind(this);
 
-        presenter = new LoginPresenter(this);
+        loadingDialog = new LoadingDialog(this);
 
+        presenter = new LoginPresenter(this);
     }
 
     @OnClick(R.id.buttonGoogle)
     void onClickButtonGoogle() {
-        Toast.makeText(this, "Login button clicked.", Toast.LENGTH_SHORT).show();
+        presenter.onLoginRequest();
     }
 
     @Override
@@ -41,6 +43,16 @@ public class LoginView extends AppCompatActivity implements Login.View {
     @Override
     public void onLoginFailure() {
 
+    }
+
+    @Override
+    public void showProgress() {
+        loadingDialog.show();
+    }
+
+    @Override
+    public void hideProgress() {
+        loadingDialog.dismiss();
     }
 
 }
