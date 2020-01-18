@@ -16,6 +16,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    flavorDimensions "default"
+    productFlavors {
+        brazil {
+            applicationId "br.com.oneminute"
+            versionCode 1
+            versionName "0.0.1"
+            applicationIdSuffix = ".brazil"
+        }
+        mexico {
+            applicationId "mx.com.oneminute"
+            versionCode 1
+            versionName "0.0.1"
+            applicationIdSuffix = ".mexico"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
