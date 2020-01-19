@@ -1,6 +1,10 @@
 package dev.marcello.oneminuteshare.ui.login;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.Task;
+
 import dev.marcello.oneminuteshare.ui.ProgressListener;
+import dev.marcello.oneminuteshare.ui.ResponseListener;
 
 /**
  * Created by marcellocamara@id.uff.br on 18/01/2020.
@@ -12,17 +16,19 @@ public interface Login {
 
         void onLoginSuccess();
 
-        void onLoginFailure();
+        void onLoginFailure(String message);
 
     }
 
-    interface Presenter {
+    interface Presenter extends ResponseListener {
 
-        void onLoginRequest();
+        void onLoginRequest(Task<GoogleSignInAccount> googleSignInResult);
 
     }
 
     interface Model {
+
+        void doLogin(GoogleSignInAccount account);
 
     }
 
