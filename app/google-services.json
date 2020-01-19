@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "438419076555",
+    "firebase_url": "https://oneminuteshare-2020.firebaseio.com",
+    "project_id": "oneminuteshare-2020",
+    "storage_bucket": "oneminuteshare-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438419076555:android:2d6f7413e82cc8e624724e",
+        "android_client_info": {
+          "package_name": "oneminuteshare.brazil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0F-T79YVkhvdjh-7D54vNxGIp2TUN_Vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438419076555:android:40a348db1961b6f524724e",
+        "android_client_info": {
+          "package_name": "oneminuteshare.brazil.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0F-T79YVkhvdjh-7D54vNxGIp2TUN_Vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438419076555:android:ca013614abc869b924724e",
+        "android_client_info": {
+          "package_name": "oneminuteshare.mexico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0F-T79YVkhvdjh-7D54vNxGIp2TUN_Vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438419076555:android:5d68fc22ba65e8ba24724e",
+        "android_client_info": {
+          "package_name": "oneminuteshare.mexico.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0F-T79YVkhvdjh-7D54vNxGIp2TUN_Vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
