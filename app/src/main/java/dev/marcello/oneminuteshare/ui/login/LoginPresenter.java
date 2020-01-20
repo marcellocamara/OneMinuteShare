@@ -15,11 +15,11 @@ import dev.marcello.oneminuteshare.data.dao.UserDAO;
 public class LoginPresenter implements Login.Presenter {
 
     private Login.View view;
-    private UserDAO userDAO;
+    private Login.Model dao;
 
     LoginPresenter(Login.View view) {
         this.view = view;
-        this.userDAO = new UserDAO(this);
+        this.dao = new UserDAO(this);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class LoginPresenter implements Login.Presenter {
         try {
             GoogleSignInAccount account = googleSignInResult.getResult(ApiException.class);
             if (account != null) {
-                userDAO.doLogin(account);
+                dao.doLogin(account);
             } else {
                 onFailure(App.getContext().getString(R.string.sign_in_error));
             }
