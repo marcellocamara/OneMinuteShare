@@ -9,12 +9,13 @@ import dev.marcello.oneminuteshare.R;
 import dev.marcello.oneminuteshare.data.database.Database;
 import dev.marcello.oneminuteshare.ui.ResponseListener;
 import dev.marcello.oneminuteshare.ui.login.Login;
+import dev.marcello.oneminuteshare.ui.main.Main;
 
 /**
  * Created by marcellocamara@id.uff.br on 19/01/2020.
  */
 
-public class UserDAO implements Login.Model {
+public class UserDAO implements Login.Model, Main.Model {
 
     private ResponseListener responseListener;
     private Database database;
@@ -34,6 +35,12 @@ public class UserDAO implements Login.Model {
                 responseListener.onFailure(App.getContext().getString(R.string.sign_in_error));
             }
         });
+    }
+
+    @Override
+    public void doLogout() {
+        database.getFirebaseAuthInstance().signOut();
+        responseListener.onSuccess();
     }
 
 }

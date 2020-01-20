@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.Task;
 
 import butterknife.ButterKnife;
@@ -17,6 +16,7 @@ import butterknife.OnClick;
 import dev.marcello.oneminuteshare.R;
 import dev.marcello.oneminuteshare.ui.dialogs.LoadingDialog;
 import dev.marcello.oneminuteshare.ui.main.MainActivity;
+import dev.marcello.oneminuteshare.util.GoogleUtil;
 
 import static dev.marcello.oneminuteshare.util.ConstantsUtil.RC_GOOGLE_SIGN_IN;
 
@@ -39,12 +39,7 @@ public class LoginView extends AppCompatActivity implements Login.View {
 
         loadingDialog = new LoadingDialog(this);
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getApplicationContext().getString(R.string.google_sign_in))
-                .requestEmail()
-                .build();
-
-        googleSignInClient = GoogleSignIn.getClient(this, gso);
+        googleSignInClient = GoogleSignIn.getClient(this, GoogleUtil.getGoogleSignInOptions(this));
 
         presenter = new LoginPresenter(this);
     }
