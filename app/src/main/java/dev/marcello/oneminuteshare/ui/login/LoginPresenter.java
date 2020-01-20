@@ -4,6 +4,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import dev.marcello.oneminuteshare.App;
+import dev.marcello.oneminuteshare.R;
 import dev.marcello.oneminuteshare.data.dao.UserDAO;
 
 /**
@@ -25,15 +27,20 @@ public class LoginPresenter implements Login.Presenter {
         view.showProgress();
         try {
             GoogleSignInAccount account = googleSignInResult.getResult(ApiException.class);
-            // Signed in successfully, show authenticated UI.
             if (account != null) {
                 userDAO.doLogin(account);
             } else {
-                onFailure("signInResult:failed");
+                onFailure(App.getContext().getString(R.string.sign_in_error));
             }
         } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            onFailure("signInResult:failed code=" + e.getStatusCode());
+            onFailure(App.getContext().getString(R.string.sign_in_error));
+        }
+    }
+
+    @Override
+    public void onCheckLoggedIn(GoogleSignInAccount lastSignedInAccount) {
+        if (lastSignedInAccount != null) {
+            onSuccess();
         }
     }
 

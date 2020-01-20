@@ -24,6 +24,8 @@ public interface Login {
 
         void onLoginRequest(Task<GoogleSignInAccount> googleSignInResult);
 
+        void onCheckLoggedIn(GoogleSignInAccount lastSignedInAccount);
+
     }
 
     interface Model {

@@ -3,10 +3,17 @@
     <string name="app_name">OneMinuteShare</string>
 
     <!-- Login -->
-    <string name="sign_in">Sign in</string>
+    <string name="sign_in_error">Failure. Please, sign in again.</string>
 
     <!-- ImageView Descriptions -->
     <string name="description_icon_logo">Logo icon</string>
     <string name="description_icon_google">Google icon</string>
+
+    <!-- Buttons -->
+    <string name="sign_in">Sign in</string>
+    <string name="close">Close</string>
+
+    <!-- Tokens -->
+    <string name="google_sign_in" translatable="false">438419076555-bh02fqergrc20uhds1lmpk1uoqe4hpgk.apps.googleusercontent.com</string>
 
 </resources>

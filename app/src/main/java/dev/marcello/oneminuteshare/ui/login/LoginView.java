@@ -16,6 +16,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dev.marcello.oneminuteshare.R;
 import dev.marcello.oneminuteshare.ui.dialogs.LoadingDialog;
+import dev.marcello.oneminuteshare.ui.main.MainActivity;
+
+import static dev.marcello.oneminuteshare.util.ConstantsUtil.RC_GOOGLE_SIGN_IN;
 
 /**
  * Created by marcellocamara@id.uff.br on 18/01/2020.
@@ -26,7 +29,6 @@ public class LoginView extends AppCompatActivity implements Login.View {
     private LoadingDialog loadingDialog;
     private GoogleSignInClient googleSignInClient;
     private Login.Presenter presenter;
-    private int RC_GOOGLE_SIGN_IN = 1234;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class LoginView extends AppCompatActivity implements Login.View {
         loadingDialog = new LoadingDialog(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getApplicationContext().getString(R.string.google_sign_in))
                 .requestEmail()
                 .build();
 
@@ -56,9 +59,7 @@ public class LoginView extends AppCompatActivity implements Login.View {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         hideProgress();
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_GOOGLE_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             presenter.onLoginRequest(task);
         }
@@ -66,12 +67,8 @@ public class LoginView extends AppCompatActivity implements Login.View {
 
     @Override
     public void onLoginSuccess() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setCancelable(false)
-                .setTitle(R.string.sign_in)
-                .setMessage("Login successful")
-                .setPositiveButton("Close", null);
-        builder.show();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
     }
 
     @Override
@@ -79,8 +76,8 @@ public class LoginView extends AppCompatActivity implements Login.View {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setCancelable(false)
                 .setTitle(R.string.sign_in)
-                .setMessage("signInResult:failed code=" + message)
-                .setPositiveButton("Close", null);
+                .setMessage(message)
+                .setPositiveButton(getApplicationContext().getString(R.string.close), null);
         builder.show();
     }
 
@@ -92,6 +89,12 @@ public class LoginView extends AppCompatActivity implements Login.View {
     @Override
     public void hideProgress() {
         loadingDialog.dismiss();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        presenter.onCheckLoggedIn(GoogleSignIn.getLastSignedInAccount(getApplicationContext()));
     }
 
 }
