@@ -2,15 +2,17 @@
 
     <string name="app_name">OneMinuteShare</string>
 
-    <!-- Login -->
+    <!-- Login/logout -->
     <string name="sign_in_error">Failure. Please, sign in again.</string>
+    <string name="sign_out_error">Failure. Please, sign out again.</string>
 
     <!-- ImageView Descriptions -->
     <string name="description_icon_logo">Logo icon</string>
     <string name="description_icon_google">Google icon</string>
 
-    <!-- Buttons -->
+    <!-- Buttons/Menu -->
     <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
     <string name="close">Close</string>
 
     <!-- Tokens -->
